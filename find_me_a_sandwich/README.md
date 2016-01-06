@@ -27,7 +27,7 @@ Find Me A Sandwich is written in Rails, a Ruby-based MVC framework.  The MVC arc
 ## The Exercise
 
 ### Part 0 - Getting Started
-First, you'll need to get everything set up. Use RSpec to execute the existing unit tests using the command `bundle exec rspec`. You should make sure everything passes, and then stand the app up and make sure you can navigate to it in your browser.
+First, you'll need to get everything set up. Be sure to get an API key from Locu and set the `LOCU_API_KEY` environment variable.  Use RSpec to execute the existing unit tests using the command `bundle exec rspec`. You should make sure everything passes, and then stand the app up and make sure you can navigate to it in your browser.
 
 ### Part 1 - Behavioral Tests
 As with any behavior-driven developed program, you'll be starting with the tests.  Add a series of [Cucumber](https://cucumber.io) features for favoriting/unfavoriting meals, and looking up others' favorites.
