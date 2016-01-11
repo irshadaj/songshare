@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: sandwich_development
+
+test: &test
+  <<: *default
+  database: sandwich_test
+
+production:
+  <<: *default
+  database: sandwich_production
+  username: sandwich
+  password: <%= ENV['SANDWICH_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
