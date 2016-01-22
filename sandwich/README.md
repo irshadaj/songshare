@@ -1,10 +1,10 @@
-# Find Me A Sandwich
+# Sandwich
 
 I'm hungry and could use a sandwich.  However, I have no idea what type of sandwich I want, or from where.
 
 <a href="http://xkcd.com/149/" target="xkcd"><img src="http://imgs.xkcd.com/comics/sandwich.png" alt="xkcd - Make me a sandwich" /></a>
 
-We have a pretty basic app called "Find Me A Sandwich" which can lookup menus from different restaurants.  However, it doesn't let me save my favorite sandwiches for later, or let me look up others' favorites.
+We have a pretty basic app called "Sandwich" which can lookup menus from different restaurants.  However, it doesn't let me save my favorite sandwiches for later, or let me look up others' favorites.
 
 Your job is to allow me to favorite my sandwiches, and look up the favorites of others.
 
@@ -22,7 +22,7 @@ Your job is to allow me to favorite my sandwiches, and look up the favorites of 
 
 ## Overview
 
-Find Me A Sandwich is written in Rails, a Ruby-based MVC framework.  The MVC architectural pattern separates applications into three interconnected parts: the **m**odel, **v**iew and **c**ontroller.  The **model** component is responsible for storing data and containing the business logic of the application.  The **view** generates output to the user.  In Rails, this output usually takes the form of HTML (for browsers) or JSON (for API consumers).  Finally, the **controller** links the two, accepting web requests from the client, sending messages to the model, and rendering the views based on the state of the model.  Take a look at the [resources](#resources) below for more information on MVC and Rails.
+Sandwich is written in Rails, a Ruby-based MVC framework.  The MVC architectural pattern separates applications into three interconnected parts: the **m**odel, **v**iew and **c**ontroller.  The **model** component is responsible for storing data and containing the business logic of the application.  The **view** generates output to the user.  In Rails, this output usually takes the form of HTML (for browsers) or JSON (for API consumers).  Finally, the **controller** links the two, accepting web requests from the client, sending messages to the model, and rendering the views based on the state of the model.  Take a look at the [resources](#resources) below for more information on MVC and Rails.
 
 ## The Exercise
 
