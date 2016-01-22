@@ -1,7 +1,7 @@
 module LocationHelper
   def format_address(location)
     content_tag(:address) do
-      lines = location.to_s.lines.map { |l| content_tag(:span, l) }
+      lines = location.to_s.lines.map { |l| content_tag(:span, l.strip) }
       lines.join(tag(:br)).html_safe
     end
   end

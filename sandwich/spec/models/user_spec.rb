@@ -42,4 +42,10 @@ describe User, type: :model do
       end
     end
   end
+
+  describe "#full_name" do
+    it "is the combination of the first and last names" do
+      expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
+    end
+  end
 end

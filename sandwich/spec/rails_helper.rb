@@ -6,7 +6,6 @@ ENV["RAILS_ENV"] ||= "test"
 
 unless zeus_running?
   require "simplecov"
-  SimpleCov.start("rails")
 end
 
 require "rails/all"
