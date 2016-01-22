@@ -11,6 +11,7 @@ module Locu
     PATHS = { venue_search: "/v2/venue/search" }
 
     def initialize(api_key)
+      raise ArgumentError, "API Key is required" if api_key.to_s == ""
       @api_key = api_key
       @client = Faraday.new(HOST)
     end
