@@ -17,6 +17,7 @@ Around do |_scenario, block|
 end
 
 VCR.configure do |config|
+  config.ignore_localhost = true
   config.cassette_library_dir = "features/support/fixtures/vcr"
   config.hook_into(:webmock)
 end
