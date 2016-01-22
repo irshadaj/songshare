@@ -26,16 +26,24 @@ class MerchantsController < ApplicationController
     return @merchants = [] unless search_params[:location].present?
 
     cache_expires = AppConfig.locu.caching_time.days
-    cache_name = "merchant_results_#{@location}"
+    cache_name = "merchants/at_#{@location}"
 
-    @merchants = Rails.cache.fetch(cache_name, expires_in: cache_expires) do
-      result = SearchLocuVenues.call(client: locu_client,
-                                     postal_code: @location)
-      result.merchants
+    if Rails.env.production?
+      @merchants = Rails.cache.fetch(cache_name, expires_in: cache_expires) do
+        search_locu_venues
+      end
+    else
+      @merchants = search_locu_venues
     end
   end
 
   def retrieve_merchant
     @merchant = Merchant.with_menus.find(params[:id])
+  end
+
+  def search_locu_venues
+    result = SearchLocuVenues.call(client: locu_client,
+                                   postal_code: @location)
+    result.merchants
   end
 end
