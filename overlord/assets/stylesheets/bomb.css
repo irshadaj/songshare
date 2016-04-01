@@ -1,0 +1,56 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #e8f4fb 0%, #7dacc4 100%);
+  height: 100%;
+  font-family: Ubuntu, Terminal, "Courier New", monospace;
+  font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  text-align: center;
+}
+
+form.bomb-form, .message {
+  background-color: #eaf8fb;
+  border: thick outset #777;
+  margin: 15px auto;
+  padding: 15px;
+  width: 600px;
+}
+
+form.bomb-form label {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0;
+  width: 200px;
+}
+
+form.bomb-form input {
+  display: inline-block;
+  font-size: 1.1em;
+  margin: inherit 0 inherit 0;
+}
+
+form.bomb-form button {
+  background-color: #09c;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 1em;
+  margin: 1em 0 1em 0;
+  padding: 0.8em 2em;
+}
+
+form.bomb-form button:first-of-type {
+  margin: 1em 0 1em 200px;
+}
+
+form.bomb-form button[type=submit] {
+  background-color: #f90;
+}
