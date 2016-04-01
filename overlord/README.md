@@ -8,6 +8,8 @@ One tricky problem is that bombs are quite expensive to debug in prod. To avoid 
 
 But, this is the important part: you're going to write all the behavioral tests for the device before you write any of the Sinatra app code. You cleverly realize that by writing the tests the way you'd like the code to work, you'll make your resulting code that much better. Well done, smartie.
 
+One other thing. Your client is on a tight schedule, so we don't have time to make the bomb look too flashy.  We've got some [basic CSS](assets/stylesheets/bomb.css) that should help with the basic interface.
+
 ### Requirements
 1. Even coffee machines have webservers these days. The bomb interface should be a Sinatra app, and the tests should be written in Cucumber and Rspec. A simple Sinatra base has been provided.
 2. The bomb interface should include a field to type in an activation / deactivation code and an indicator of the activation state of the bomb.
