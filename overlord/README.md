@@ -2,13 +2,13 @@ Super Villain's Detonation Device
 =================================
 
 ## Part I
-You've been contacted by a super villain in search of help. He says he has a great idea, and needs only your genius to bring it to completion. Turns out the idea is going to be a bomb. I mean, literally. It's a bomb. Still, he's offering equity.
+You've been contacted by your local super villain, Professor Nefarious in search of help. She says she has a great idea, and needs only your genius to bring it to completion. Turns out the idea is going to be a bomb. I mean, literally. It's a bomb. Still, she's offering equity.
 
 One tricky problem is that bombs are quite expensive to debug in prod. To avoid an embarrassing dud, you're going to develop and test the bomb in the relative safety of your own workshop (desk, really). Thankfully, you've got requirements, so mostly this is just an exercise of translating those requirements into working tests and then writing the software to control the bomb. 
 
 But, this is the important part: you're going to write all the behavioral tests for the device before you write any of the Sinatra app code. You cleverly realize that by writing the tests the way you'd like the code to work, you'll make your resulting code that much better. Well done, smartie.
 
-One other thing. Your client is on a tight schedule, so we don't have time to make the bomb look too flashy.  We've got some [basic CSS](assets/stylesheets/bomb.css) that should help with the basic interface.
+One other thing. Your client is on a tight schedule and spent all her money on pistol-packing pigeons, so we don't have the time or money to make the bomb look too flashy.  We've stolen some [totally awesome styles from late 2008](assets/stylesheets/bomb.css) that should help with the basic interface.
 
 ### Requirements
 1. Even coffee machines have webservers these days. The bomb interface should be a Sinatra app, and the tests should be written in Cucumber and Rspec. A simple Sinatra base has been provided.
@@ -32,9 +32,9 @@ One other thing. Your client is on a tight schedule, so we don't have time to ma
 * No bonus points for developing an actual electronic detonator. Still, dude, sweet.
 
 ## Part II
-Nice job with the bomb, earlier!  Your client was very impressed!  Unfortunately, before he could go through with his evil scheme, he was captured by the authorities.  Control over his evil empire has now fallen into the hands of his son, Scott.
+Nice job with the bomb, earlier!  Your client was very impressed!  Unfortunately, before she could go through with her evil scheme, Prof. Nefarious was captured by the authorities.  Control over her evil empire has now fallen into the hands of her son, Rick Nefarious.
 
-Scott is not as impressed.  He was looking forward to seeing something more flashy, with an awesome, malevolent-looking interface. _"Like in the movies."_
+Rick is not as impressed.  He was looking forward to seeing something more flashy, with an awesome, malevolent-looking interface. _"Like in the movies."_  He's also willing to increase the project budget to make the bomb look more badass.
 
 ### Requirements
 1. Redesign the bomb interface to look awesome.
