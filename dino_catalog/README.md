@@ -31,3 +31,6 @@ Happy Hunting. (Giganotosaurus was the largest hunting dinosaur, at 46 feet long
 
 You should write both the tests and the code for this exercise.  Writing lots of code is the best way to get better.
 
+Presently the Enova SE testing suite includes [RSpec](http://rspec.info/) and [Cucumber](http://cucumber.io/). For this exercise please implement your tests using RSpec. You will have a chance to use Cucumber in subsequent tasks.
+
+Incidentally, if you feel there are testing tools other than RSpec that might be more beneficial for the team, please let us know! Of course you could also show off your skills and implement an additional set of tests for this exercise using those tools.
