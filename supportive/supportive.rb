@@ -76,13 +76,13 @@ class BlagPost
     return '' unless comments_allowed?
     return '' unless comments.length > 0
 
-    ordinal = case comments.length % 10
+    ordinal = case comments.length + 1 % 10
       when 1 then "st"
       when 2 then "nd"
       when 3 then "rd"
       else "th"
     end
-    "You will be the #{comments.length}#{ordinal} commenter"
+    "You will be the #{comments.length + 1}#{ordinal} commenter"
   end
 
   def comments_allowed?
