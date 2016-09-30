@@ -1,8 +1,6 @@
 ## Unstylish Code
 
-This code was not written with the ruby style guide in mind.  This makes it hard for other members of the team to work with and maintain.  Refactor it so it conforms properly.  
-
-Please include references to resources used to guide your revisions in your commit message.  Make sure you meet with the developer to assure they understand what changes were made and why.
+This code fails to conform to the ruby style guide in all sorts of ugly ways, so it's hard for other members of the team to work on it. Refactor it so that it conforms properly. Feel free to send them a passive-aggressive email when you're done cleaning up their mess.
 
 
-Trivia Fact: The code runs, perhaps consider as much before making drastic changes and instead test incrementally. 
+Trivia Fact: The code runs, but it makes me want to claw my eyes out to read it. I repent of my sins.
