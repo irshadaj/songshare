@@ -1,9 +1,8 @@
 ## Unstylish Code
 
-This code was not written with the ruby style guide in mind.  This makes it hard for other members of the team to work with and maintain.  Refactor it so it conforms to style guide found at https://github.com/bbatsov/ruby-style-guide 
+This code was not written with the ruby style guide in mind.  This makes it harder for other members of the team to work with and maintain.  Please refactor it so it conforms to style guide found at https://github.com/bbatsov/ruby-style-guide 
 
-Please include references to resources used to guide your revisions in your commit message.  Make sure you meet with the developer to assure they understand what changes were made and why.
-
+Make sure you meet with the developer to assure they understand what changes were made and why (for the sake of this exercise, you can include your reasoning in the pull request discussion).
 
 Trivia Fact: The code runs, perhaps consider as much before making drastic changes and instead test incrementally. 
 
