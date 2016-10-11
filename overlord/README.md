@@ -40,3 +40,4 @@ Rick is not as impressed.  He was looking forward to seeing something more flash
 1. Redesign the bomb interface to look awesome.
 2. Use HTML5 to develop semantic HTML.
 3. Organize your new CSS according to SMACSS.
+4. Get a feel for both the [ERB](http://guides.rubyonrails.org/layouts_and_rendering.html) and [HAML](http://haml.info/) templating languages.
