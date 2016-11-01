@@ -16,7 +16,9 @@ Given(/^I am on the home page$/) do
 end
 
 When(/^I enter a valid activation code$/) do
+  # If these fields existed on your home page, this step would pass.
   fill_in "Activation Code", with: "9876"
+  click_on "Activate Bomb"
 end
 
 Then(/^the bomb should be armed$/) do
