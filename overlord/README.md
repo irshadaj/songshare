@@ -10,6 +10,20 @@ But, this is the important part: you're going to write all the behavioral tests 
 
 One other thing. Your client is on a tight schedule and spent all her money on pistol-packing pigeons, so we don't have the time or money to make the bomb look too flashy.  We've stolen some [totally awesome styles from late 2008](assets/stylesheets/bomb.css) that should help with the basic interface.
 
+### Setup
+The bomb interface will be a website running on Sinatra (see Requirements below). You'll be writing tests in Cucumber and RSpec. To get started follow these steps:
+
+```bash
+# Run bundler to install dependencies
+bundle install
+
+# Start the web server
+ruby overlord.rb  # => now you can see it in your browser at http://localhost:4567
+
+# Run your Cucumber tests
+bundle exec cucumber
+```
+
 ### Requirements
 1. Even coffee machines have webservers these days. The bomb interface should be a Sinatra app, and the tests should be written in Cucumber and Rspec. A simple Sinatra base has been provided.
 2. The bomb interface should include a field to type in an activation / deactivation code and an indicator of the activation state of the bomb.
