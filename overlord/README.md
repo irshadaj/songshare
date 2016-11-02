@@ -51,7 +51,8 @@ Nice job with the bomb, earlier!  Your client was very impressed!  Unfortunately
 Rick is not as impressed.  He was looking forward to seeing something more flashy, with an awesome, malevolent-looking interface. _"Like in the movies."_  He's also willing to increase the project budget to make the bomb look more badass.
 
 ### Requirements
-1. Redesign the bomb interface to look awesome.
-2. Use HTML5 to develop semantic HTML.
-3. Organize your new CSS according to SMACSS.
-4. Get a feel for both the [ERB](http://guides.rubyonrails.org/layouts_and_rendering.html) and [HAML](http://haml.info/) templating languages.
+1. Copy your old Overlord project in `overlord/` over to `overlord_2`.
+2. Redesign the bomb interface to look awesome.
+3. Use HTML5 to develop semantic HTML.
+4. Organize your new CSS according to SMACSS.
+5. Get a feel for both the [ERB](http://guides.rubyonrails.org/layouts_and_rendering.html) and [HAML](http://haml.info/) templating languages.
