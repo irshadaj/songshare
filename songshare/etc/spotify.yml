@@ -1,0 +1,6 @@
+market: US # Country in which track is to be played
+
+artists:
+  limit: 20 # Max number of artists to return in a single search query
+tracks:
+  limit: 20 # Max number of tracks to return in a single search query

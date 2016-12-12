@@ -1,0 +1,18 @@
+.page-header
+  %h1
+    #{@song.title}
+    %small by #{@song.artists.map(&:name).to_sentence}
+
+.pull-right= render partial: 'play', locals: { song: @song, width: 300, height: 380 }
+.row
+  .col-lg-8
+    - if @song.explicit?
+      .label.label-warning EXPLICIT
+    %dl.dl-horizontal
+      %dt Album
+      %dd
+        = @song.album.name
+        %em (#{@song.album.year})
+      - if @song.duration.present?
+        %dt Duration
+        %dd= format_duration(@song.duration)

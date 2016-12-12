@@ -1,0 +1,8 @@
+- if notice
+  .alert.alert-success.alert-dismissable.page-alert{ role: :alert }
+    = close_button
+    = notice
+- if alert
+  .alert.alert-danger.alert-dismissable.page-alert{ role: :alert }
+    = close_button
+    = alert

@@ -1,0 +1,6 @@
+= form_tag(friends_path, class: :form) do
+  = hidden_field_tag(:redirect_to, request.path)
+  .input-group
+    = text_field_tag(:name, nil, class: 'form-control', placeholder: 'Spotify Username', required: true)
+    %span.input-group-btn
+      %button{type: :submit, class: %w(btn btn-default)} Add a Friend

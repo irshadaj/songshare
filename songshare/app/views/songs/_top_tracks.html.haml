@@ -1,0 +1,14 @@
+.panel.panel-info.top-tracks
+  .panel-heading
+    %h3 Top Tracks
+  .panel-body
+    - if @top_tracks.blank?
+      %p You do not have any top tracks yet.
+    - else
+      %ol
+        - @top_tracks.each do |song|
+          %li
+            - if song.explicit?
+              %span.label.label-warning EXPLICIT
+            = link_to(song.title, song)
+            by #{song.artists.map(&:name).to_sentence}
