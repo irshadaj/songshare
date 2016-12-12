@@ -1,0 +1,29 @@
+.page-header
+  %h1
+    Song Results
+    %small= page_entries_info(@songs, entry_name: 'song')
+
+= paginate(@songs)
+%ul.media-list.song-list
+  - @songs.each do |song|
+    %li.media[song]
+      - if song.album.images.any?
+        .media-left
+          %a{ href: '#' }
+            %img.spotify_thumbnail{ alt: song.album.name, src: song.album.images.first.try(:url) }
+      .media-body
+        %h4.media-heading
+          %span.song-title= link_to(song.title, song)
+          - if song.explicit?
+            %span.label.label-warning.label-explicit EXPLICIT
+        %p
+          by
+          %em.song-artists= song.artists.map(&:name).to_sentence
+          from
+          %em.song-album= song.album.name
+        - if song.duration.present?
+          %p
+            %strong Duration:
+            %span.song-duration= format_duration(song.duration)
+      .media-right= render partial: 'play', locals: { width: 250, height: 80, song: song }
+      %hr/

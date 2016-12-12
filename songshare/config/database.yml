@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: songshare_development
+
+test: &test
+  <<: *default
+  database: songshare_test
+#
+production:
+  <<: *default
+  database: songshare_production
+  username: songshare
+  password: <%= ENV['SONGSHARE_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test

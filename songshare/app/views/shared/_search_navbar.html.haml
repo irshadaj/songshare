@@ -1,0 +1,8 @@
+= form_tag(search_songs_path, class: %w(navbar-form navbar-right search-form), method: :get) do
+  = label_tag(:q, 'Search query', class: 'sr-only')
+  .input-group
+    = search_field_tag(:q, @query, class: 'form-control', placeholder: '(ex. Van Halen, Jump)')
+    %span.input-group-btn
+      %button.btn.btn-primary{type: :submit}
+        Search
+        %i.glyphicon.glyphicon-search

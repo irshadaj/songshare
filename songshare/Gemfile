@@ -1,0 +1,48 @@
+source 'https://rubygems.org'
+
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1' # Rails framework
+gem 'pg', '~> 0.18' # PostgreSQL library
+gem 'puma', '~> 3.0' # Web server
+gem 'sass-rails', '~> 5.0' # Renders SASS to CSS
+gem 'uglifier', '>= 1.3.0' # Javascript compressor
+gem 'coffee-rails', '~> 4.2' # Renders Coffeescript to Javascript
+gem 'therubyracer', platforms: :ruby # Javascript interpreter
+gem 'jquery-rails' # jQuery library
+gem 'haml-rails' # HAML renderer
+gem 'jbuilder', '~> 2.5' # JSON renderer
+gem 'rspotify', '~> 1.19.0' # Spotify Web API client
+gem 'devise' # Authentication provider
+gem 'omniauth' # Authentication middleware
+gem 'omniauth-oauth2', '~> 1.3.1' # required by Devise/Omniauth Spotify combo
+gem 'omniauth-spotify' # Allows OAuth with Spotify
+gem 'bootstrap-sass' # Bootstrap CSS/JS framework
+#gem 'draper', '~> 3.0.0.beta1' # Decorator framework (enable if you want to use decorators)
+gem 'colorize' # Provides colorized console output
+gem 'figgy' # Easy-to-use configuration framework that loads from the etc/ directory
+gem 'kaminari', github: 'amatsuda/kaminari' # Pagination framework
+
+group :development, :test do
+  gem 'byebug', platform: :mri # Debugger tool
+  gem 'cucumber-rails', require: false # Provides Cucumber integration tests with Rails-specific configuration
+  gem 'database_cleaner' # Cleans database between tests
+  gem 'dotenv-rails' # Allows loading of .env files for configuration
+  gem 'factory_girl_rails' # Provides factories for testing
+  gem 'faker' # Generates random data for use in factories
+  gem 'pry', require: false # Inline debugging tool
+  gem 'rspec-rails' # Provides RSpec with Rails-specific configuration
+  gem 'site_prism' # Page object framework
+  gem 'vcr', require: false # Records and caches web requests for faster testing
+  gem 'webmock', require: false # Web response stubbing framework.  Can be used with VCR and/or independently.
+end
+
+group :development do
+  gem 'web-console' # Renders the Rails console on error pages
+  gem 'listen', '~> 3.0.5'
+end
+
+group :test do
+  gem 'poltergeist' # Javascript-friendly web driver for Capybara tests
+  gem 'simplecov', require: false # Simple code coverage tool (see coverage/index.html)
+end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Provides time zone info for Windows platform
