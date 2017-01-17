@@ -3,3 +3,4 @@
 **/*.swp
 **/*.sock
 .DS_Store
+/.idea/
