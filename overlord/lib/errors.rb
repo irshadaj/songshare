@@ -1,0 +1,2 @@
+class IncorrectStateError < RuntimeError
+end

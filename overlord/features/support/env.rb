@@ -2,8 +2,7 @@
 
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', '..', 'overlord.rb')
-puts File.join(File.dirname(__FILE__), '..', '..', 'overlord.rb')
+require File.expand_path('../../../overlord.rb', __FILE__)
 
 require 'capybara'
 require 'capybara/cucumber'
