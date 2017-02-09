@@ -15,12 +15,15 @@ Given(/^I am on the home page$/) do
   visit '/'
 end
 
-When(/^I enter a valid activation code$/) do
+When(/^I enter a valid custom combination$/) do
   # If these fields existed on your home page, this step would pass.
-  fill_in "Activation Code", with: "9876"
-  click_on "Activate Bomb"
+  fill_in 'Combination', with: '9876'
 end
 
-Then(/^the bomb should be armed$/) do
-  expect(page).to have_content("Bomb is armed")
+When(/^I lock the safe$/) do
+  click_button 'Lock'
+end
+
+Then(/^the safe should be locked$/) do
+  expect(page).to have_content('Safe is locked')
 end

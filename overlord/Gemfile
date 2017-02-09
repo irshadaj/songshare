@@ -1,14 +1,15 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "sinatra"
-
-group :test do
-  gem "rspec"
-  gem "simplecov", require: false
-end
+gem 'haml'
+gem 'sinatra'
 
 group :development, :test do
+  gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-sinatra'
-  gem 'capybara'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'simplecov', require: false
 end
