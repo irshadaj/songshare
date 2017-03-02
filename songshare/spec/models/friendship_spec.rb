@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Friendship, type: :model do
-  let(:friendship) { build_stubbed(:friendship) }
+  let(:friendship) { build(:friendship) }
   let(:inverse) { build(:friendship, user: friendship.friend, friend: friendship.user) }
 
   it 'must be unique' do

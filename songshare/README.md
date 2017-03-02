@@ -24,11 +24,17 @@ You'll notice in this application that there is already a lot of code here.  Thi
 ## The Exercise
 
 ### Part 0 - Getting Started
-First, you'll need to get everything set up. Be sure to set up an application with Spotify and set the `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` environment variables.  These environment variables *must* be present in order to initialize the application (server, RSpec, Cucumber, etc).
+First, you'll need to get everything set up. Be sure to [set up an application with Spotify](https://developer.spotify.com/my-applications/#!/applications). Create a `.env` file in the project directory and set the `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` environment variables.  These environment variables *must* be present in order to initialize the application (server, RSpec, Cucumber, etc).
 
-Use RSpec to execute the existing unit tests using the command `bundle exec rspec`\*. You should make sure everything passes, and then stand the app up and make sure you can navigate to it in your browser.
+Set up your `SECRET_KEY_BASE` by running:
 
-\* Note that RSpec will take some time to run the first time.  Some of the tests rely upon the Spotify API.  VCR caches the responses from these calls, so expect subsequent test runs to be faster.
+```sh
+echo -e "\nSECRET_KEY_BASE=$( bundle exec rake secret )" >> .env
+```
+
+Use RSpec to execute the existing unit tests using the command `bundle exec rspec` _(see note below)_. You should make sure everything passes, and then stand the app up and make sure you can navigate to it in your browser.
+
+\* _Note that RSpec will take some time to run the first time.  Some of the tests rely upon the Spotify API.  VCR caches the responses from these calls, so expect subsequent test runs to be faster._
 
 ### Part 1 - Behavioral Tests
 As with any behavior-driven developed program, you'll be starting with the tests.  Add a series of [Cucumber](https://cucumber.io) features for recommending songs, liking recommendations, and looking at your incoming and outgoing recommendations.
