@@ -10,7 +10,7 @@ gem 'therubyracer', platforms: :ruby # Javascript interpreter
 gem 'jquery-rails' # jQuery library
 gem 'haml-rails' # HAML renderer
 gem 'jbuilder', '~> 2.5' # JSON renderer
-gem 'rspotify', '~> 1.19.0' # Spotify Web API client
+gem 'rspotify', path: '/Users/iahmed/.rvm/gems/ruby-2.4.0/gems/rspotify-1.22.0/' # Spotify Web API client
 gem 'devise' # Authentication provider
 gem 'omniauth' # Authentication middleware
 gem 'omniauth-oauth2', '~> 1.3.1' # required by Devise/Omniauth Spotify combo
@@ -46,3 +46,4 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Provides time zone info for Windows platform
+
