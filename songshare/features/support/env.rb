@@ -3,6 +3,7 @@ require 'factory_girl'
 require 'site_prism'
 require 'webmock/cucumber'
 require_relative '../pages/site'
+require 'cucumber/rspec/doubles'
 
 def load_fixture(filename)
   path = Rails.root.join('features', 'support', 'fixtures', filename)

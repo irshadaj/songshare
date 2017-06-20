@@ -16,3 +16,12 @@
       - if @song.duration.present?
         %dt Duration
         %dd= format_duration(@song.duration)
+        %br
+        %dd
+          %form{ :action => "/recommendations/recommendations", :method => "get" }
+            %nbsp User ID:
+            %input{:type => "text", :name => "UserId", :class => "UserId", :required => true} 
+            %input{:type => "hidden", :name => "song", :value => @song.uri}
+            %br
+            %br
+            %input{:type => "submit", :value => "Recommend", :class => "button"}
