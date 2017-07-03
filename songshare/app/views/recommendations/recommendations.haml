@@ -1,18 +1,16 @@
-.panel.panel-info.top-tracks
-  .panel-heading
-    %h3 Received Recommendations
-  .panel-body
-    - if @recommendation.blank?
-      %p You have not received any recommendations yet.
-    - else
-      %ol
-        - @recommendation.each do |recommendation|
-          %li
-            = link_to(recommendation.song, song)
-            Sent by #{recommendation.from}
-            To #{recommendation.to}
-            Liked? #{recommendation.liked}
-            %form{ :action => "/recommendations/recommendations", :method => "post" }
-            %input{:type => "submit", :value => "Like", :class => "button", value => 1}
-            %input{:type => "submit", :value => "Dislike", :class => "button", value => 0}
-            
+.page-header
+  %h1 Welcome, #{current_user.full_name}!
+  %td
+    = link_to('Back to Home', '/')      
+.row
+  .col-md-8.col-sm-6
+    .container-fluid
+      = render partial: 'songs/top_tracks'
+  .col-md-4.col-sm-6
+    .container-fluid
+      .panel.panel-info.friends
+        .panel-heading
+          %h3 Friends
+        .panel-body
+          = render partial: 'friends/new'
+          = render partial: 'friends/list'

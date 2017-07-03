@@ -16,8 +16,3 @@ Feature: Receive song recommendations
     Given I have existing recommendations
     When I like a recommendation
     Then the song should be liked
-
-  Scenario: Dislike recommendation
-    Given I have existing recommendations
-    When I dislike a recommendation
-    Then the song should be disliked

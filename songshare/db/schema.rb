@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619170523) do
+ActiveRecord::Schema.define(version: 20170628152212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,12 +67,13 @@ ActiveRecord::Schema.define(version: 20170619170523) do
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.string   "from",       null: false
-    t.string   "to",         null: false
-    t.string   "song",       null: false
-    t.integer  "liked"
+    t.integer  "from",       null: false
+    t.integer  "to",         null: false
+    t.integer  "song_id",    null: false
+    t.boolean  "liked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["from", "to"], name: "index_recommendations_on_from_and_to", using: :btree
   end
 
   create_table "songs", force: :cascade do |t|
@@ -111,5 +112,8 @@ ActiveRecord::Schema.define(version: 20170619170523) do
   add_foreign_key "albums_artists", "artists"
   add_foreign_key "artists_songs", "artists"
   add_foreign_key "artists_songs", "songs"
+  add_foreign_key "recommendations", "songs"
+  add_foreign_key "recommendations", "users", column: "from"
+  add_foreign_key "recommendations", "users", column: "to"
   add_foreign_key "songs", "albums"
 end

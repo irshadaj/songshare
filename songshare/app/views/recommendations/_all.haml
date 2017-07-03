@@ -1,0 +1,30 @@
+.panel.panel-info.top-tracks
+  .panel-heading
+    %h3 Recommendations
+  .panel-body
+    - if @recommendation.blank?
+      %p You do not have any recommendations yet.
+    - else
+      %ol
+        - @recommendation.each do |recommendation|
+          %li
+            = link_to(recommendation.song.title, "https://open.spotify.com/track/" + recommendation.song.external_id.to_s)
+            ;
+            %b From
+            #{recommendation.from_user.full_name}
+            ;
+            %b To
+            #{recommendation.to_user.full_name}
+            .right
+              - if recommendation.to == @current_user.id
+                %form{ action: "/recommendations/like", method: "get" }
+                  %input{type: "hidden", name:"id", value: recommendation.id}
+                  - if recommendation.liked?
+                    %green Liked!
+                  - else
+                    %input{type: "submit", name:"liked", value: "Like", class: "button"}
+                    %input{name: "authenticity_token", value: "#{form_authenticity_token}", type: "hidden"}
+              - else
+                - if recommendation.liked?
+                  %green Liked!
+= link_to('Back to Home', '/')           

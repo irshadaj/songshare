@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'recommendations/recommendations'
+  post 'recommendations' => 'recommendations#create'
+  get 'recommendations' => 'recommendations#list'
+  get 'recommendations/like' => 'recommendations#like'
+  get 'recommendations/like' => 'recommendations#unlike'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 

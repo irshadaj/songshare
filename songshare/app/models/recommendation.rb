@@ -1,3 +1,5 @@
 class Recommendation < ApplicationRecord
-  validates_presence_of :from, :to, :song
+  belongs_to :song
+  belongs_to :from_user, :foreign_key => 'from', :class_name => 'User'
+  belongs_to :to_user, :foreign_key => 'to', :class_name => 'User'
 end

@@ -18,10 +18,13 @@
         %dd= format_duration(@song.duration)
         %br
         %dd
-          %form{ :action => "/recommendations/recommendations", :method => "get" }
-            %nbsp User ID:
-            %input{:type => "text", :name => "UserId", :class => "UserId", :required => true} 
-            %input{:type => "hidden", :name => "song", :value => @song.uri}
+          %form{ :action => "/recommendations", :method => "post" }
+            %nbsp Email ID:
+            %input{type: "text", name: "to", class: "UserId", required: true}
+            %input{type: "hidden", name: "song_id", value: @song.id}
+            %input{name: "authenticity_token", value: "#{form_authenticity_token}", type: "hidden"}
             %br
             %br
-            %input{:type => "submit", :value => "Recommend", :class => "button"}
+            %input{type: "submit", value: "Recommend", class: "button"}
+          %br
+          = link_to('View My Recommendations', '/recommendations')
