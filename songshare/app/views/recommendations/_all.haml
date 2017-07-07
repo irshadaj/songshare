@@ -2,11 +2,11 @@
   .panel-heading
     %h3 Recommendations
   .panel-body
-    - if @recommendation.blank?
+    - if @recommendations.blank?
       %p You do not have any recommendations yet.
     - else
       %ol
-        - @recommendation.each do |recommendation|
+        - @recommendations.each do |recommendation|
           %li
             = link_to(recommendation.song.title, "https://open.spotify.com/track/" + recommendation.song.external_id.to_s)
             ;
@@ -16,15 +16,22 @@
             %b To
             #{recommendation.to_user.full_name}
             .right
+              
               - if recommendation.to == @current_user.id
-                %form{ action: "/recommendations/like", method: "get" }
-                  %input{type: "hidden", name:"id", value: recommendation.id}
-                  - if recommendation.liked?
-                    %green Liked!
-                  - else
-                    %input{type: "submit", name:"liked", value: "Like", class: "button"}
+                - if recommendation.liked? || recommendation.liked.nil?
+                  %form{ action: "/recommendations/dislike", method: "post" }
+                    %input{type: "hidden", name:"id", value: recommendation.id}
                     %input{name: "authenticity_token", value: "#{form_authenticity_token}", type: "hidden"}
-              - else
-                - if recommendation.liked?
-                  %green Liked!
-= link_to('Back to Home', '/')           
+                    %input{type: "submit", name:"disliked", value: "Dislike", class: "button"}
+                %br
+                - if !recommendation.liked?
+                  %form{ action: "/recommendations/like", method: "post" }
+                    %input{type: "hidden", name:"id", value: recommendation.id}
+                    %input{name: "authenticity_token", value: "#{form_authenticity_token}", type: "hidden"}
+                    %input{type: "submit", name:"liked", value: "Like", class: "button"}
+              
+              - if recommendation.liked?
+                %span{:style => "color:green"} Liked!
+              - elsif recommendation.liked == false
+                %span{:style => "color:red"} Disliked!
+       

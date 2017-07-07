@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      @recommendation = Recommendation.where('"from" = ? OR "to" = ?', current_user.id, current_user.id)
+      @recommendations = Recommendation.where('"from" = ? OR "to" = ?', current_user.id, current_user.id)
       render :index_user
     else
       render :index_guest

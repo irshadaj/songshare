@@ -5,6 +5,7 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find(params[:id])
+    @recommendation = Recommendation.new(params.permit(:from, :to, :song_id, :liked))
   end
 
   private

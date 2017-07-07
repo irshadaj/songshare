@@ -4,10 +4,10 @@ RSpec.describe Recommendation, type: :model do
   let(:recommendation) { build_stubbed(:recommendation) }
 
   describe '#to' do
-  	it 'is required' do
+    it 'is required' do
   	  recommendation.to = nil
   	  expect(recommendation).not_to be_valid
-  	end
+    end
   end
 
   describe '#from' do

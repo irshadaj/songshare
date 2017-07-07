@@ -3,7 +3,7 @@
     #{@song.title}
     %small by #{@song.artists.map(&:name).to_sentence}
 
-.pull-right= render partial: 'play', locals: { song: @song, width: 300, height: 380 }
+.pull-right= render partial: 'shared/play', locals: { song: @song, width: 300, height: 380 }
 .row
   .col-lg-8
     - if @song.explicit?
@@ -18,13 +18,12 @@
         %dd= format_duration(@song.duration)
         %br
         %dd
-          %form{ :action => "/recommendations", :method => "post" }
-            %nbsp Email ID:
-            %input{type: "text", name: "to", class: "UserId", required: true}
-            %input{type: "hidden", name: "song_id", value: @song.id}
-            %input{name: "authenticity_token", value: "#{form_authenticity_token}", type: "hidden"}
-            %br
-            %br
-            %input{type: "submit", value: "Recommend", class: "button"}
+          = form_for @recommendation do |f|
+            = collection_select(:recommendation, :to, current_user.friends, :id, :full_name)
+            = f.hidden_field :song_id, value: @song.id
+            = f.submit
           %br
-          = link_to('View My Recommendations', '/recommendations')
+          = link_to('View Recommendations', recommendations_path)
+          %br
+          %br
+          = link_to('Back to Home', root_path)
