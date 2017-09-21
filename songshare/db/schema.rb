@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706203626) do
+ActiveRecord::Schema.define(version: 20170921002304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170706203626) do
     t.boolean  "liked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "comments"
     t.index ["from", "to"], name: "index_recommendations_on_from_and_to", using: :btree
     t.index ["to", "from", "song_id"], name: "index_recommendations_on_to_and_from_and_song_id", unique: true, using: :btree
   end

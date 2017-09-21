@@ -27,6 +27,12 @@ end
     redirect_to '/recommendations'
   end
 
+  def comment
+    recommendation = Recommendation.find_by(id: params[:id])
+    recommendation.update(comments: params[:comments])
+    redirect_to '/recommendations'
+  end
+
   private
 
   def recommendation_params

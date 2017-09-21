@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   post 'recommendations/like' => 'recommendations#like'
   post 'recommendations/dislike' => 'recommendations#dislike'
+  post 'recommendations/comment' => 'recommendations#comment'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 

@@ -9,15 +9,28 @@
         - @recommendations.each do |recommendation|
           %li
             = link_to(recommendation.song.title, "https://open.spotify.com/track/" + recommendation.song.external_id.to_s)
-            ;
+            %br
             %b From
             #{recommendation.from_user.full_name}
-            ;
+            %br
             %b To
             #{recommendation.to_user.full_name}
+            %br
+            
+            - unless recommendation.comments.nil?
+              %b Comment
+              #{recommendation.comments}
+
+            - if recommendation.to == @current_user.id
+              %form{ action: "/recommendations/comment", method: "post" }
+                %input{type: "hidden", name:"id", value: recommendation.id}
+                %input{name: "authenticity_token", value: "#{form_authenticity_token}", type: "hidden"}
+                %input{type: "text", name: "comments", value:""}
+                %input{type: "submit", value:"Comment"}
+            
             .right
-              
               - if recommendation.to == @current_user.id
+                %br
                 - if recommendation.liked? || recommendation.liked.nil?
                   %form{ action: "/recommendations/dislike", method: "post" }
                     %input{type: "hidden", name:"id", value: recommendation.id}
@@ -34,4 +47,5 @@
                 %span{:style => "color:green"} Liked!
               - elsif recommendation.liked == false
                 %span{:style => "color:red"} Disliked!
+          %hr
        
