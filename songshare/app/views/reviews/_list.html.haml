@@ -1,0 +1,24 @@
+- if @friends.present?
+  %h4 My Friends
+  %ul.list-unstyled.my-friends
+    - @friends.each do |friend|
+      %li
+        .pull-right= link_to('Unfriend', friend_path(friend, redirect_to: request.path), class: 'unfriend-link', method: :delete, data: { confirm: "Are you sure you wish to unfriend #{friend.uid}?" })
+        %span.name #{friend.full_name} (#{friend.display_name})
+- if @incoming.present?
+  %h4 Friend Requests
+  %ul.list-unstyled.incoming-requests
+    - @incoming.each do |friend|
+      %li
+        .pull-right
+          = link_to('Accept', confirm_friend_path(friend, redirect_to: request.path), class: 'accept-link', method: :post)
+          |
+          = link_to('Reject', friend_path(friend, redirect_to: request.path), class: 'reject-link', method: :delete, data: { confirm: "Are you sure you wish to reject #{friend.uid}'s invitation'?" })
+        %span.name #{friend.full_name} (#{friend.display_name})
+- if @pending.present?
+  %h4 Waiting for Friends
+  %ul.list-unstyled.outgoing-requests
+    - @pending.each do |friend|
+      %li
+        .pull-right= link_to('Cancel', friend_path(friend, redirect_to: request.path), class: 'cancel-link', method: :delete)
+        %span.name #{friend.full_name} (#{friend.display_name})

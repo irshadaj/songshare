@@ -11,4 +11,7 @@
             - if song.explicit?
               %span.label.label-warning EXPLICIT
             = link_to(song.title, song)
-            by #{song.artists.map(&:name).to_sentence}
+            %br
+            #{song.artists.map(&:name).to_sentence}
+            %br
+            %br

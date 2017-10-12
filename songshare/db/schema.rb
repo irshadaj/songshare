@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921002304) do
+ActiveRecord::Schema.define(version: 20171012140116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(version: 20170921002304) do
     t.string   "comments"
     t.index ["from", "to"], name: "index_recommendations_on_from_and_to", using: :btree
     t.index ["to", "from", "song_id"], name: "index_recommendations_on_to_and_from_and_song_id", unique: true, using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "songs", force: :cascade do |t|

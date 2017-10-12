@@ -1,16 +1,20 @@
 .page-header
+  %br
+  %br
   %h1 Welcome, #{current_user.full_name}!
-  %td
-    = link_to('View My Recommendations', '/recommendations')
 .row
-  .col-md-8.col-sm-6
-    .container-fluid
-      = render partial: 'songs/top_tracks'
-  .col-md-4.col-sm-6
-    .container-fluid
-      .panel.panel-info.friends
-        .panel-heading
-          %h3 Friends
-        .panel-body
-          = render partial: 'friends/new'
-          = render partial: 'friends/list'
+  %td
+    %h3
+      = link_to('Recommendations', '/recommendations')
+  %br
+  %td
+    %h3
+      = link_to('Top Tracks', '/top_tracks')
+  %br
+  %td
+    %h3
+      = link_to('Friends', '/friends')
+  %br
+  %td
+    %h3
+      = link_to('Reviews', '/reviews')

@@ -1,6 +1,16 @@
 class FriendsController < ApplicationController
   before_action :authenticate_user!
   before_action :retrieve_friends, only: :index
+  before_action :retrieve_friends, if: :user_signed_in?
+
+  def index
+    friends = current_user.friends
+    inverse_friends = current_user.inverse_friends
+
+    @friends = friends.select { |f| f.in?(inverse_friends) }
+    @incoming = inverse_friends.reject { |f| f.in?(friends) }
+    @pending = friends.reject { |f| f.in?(inverse_friends) }
+  end
 
   def create
     friend = User.find_by_uid(params[:name])
