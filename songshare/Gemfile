@@ -20,7 +20,6 @@ gem 'bootstrap-sass' # Bootstrap CSS/JS framework
 gem 'colorize' # Provides colorized console output
 gem 'figgy' # Easy-to-use configuration framework that loads from the etc/ directory
 gem 'kaminari', github: 'amatsuda/kaminari' # Pagination framework
-gem 'pry'
 
 group :development, :test do
   gem 'byebug', platform: :mri # Debugger tool
