@@ -15,6 +15,14 @@ end
     @recommendations = Recommendation.where('"from" = ? OR "to" = ?', current_user.id, current_user.id)
   end
 
+  def sent
+    @recommendations = Recommendation.where('"from" = ?', current_user.id)
+  end
+
+  def received
+    @recommendations = Recommendation.where('"to" = ?', current_user.id)
+  end
+
   def like
     recommendation = Recommendation.find_by(id: params[:id])
     recommendation.update(liked: true)

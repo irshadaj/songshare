@@ -1,0 +1,34 @@
+.panel.panel-info.top-tracks
+  .panel-heading
+    %h3 Sent
+  .panel-body{:style => "background-color: lemonchiffon"}
+    - if @recommendations.blank?
+      %p You have not sent any recommendations yet.
+    - else
+      %ol
+        - @recommendations.each do |recommendation|
+          - if recommendation.from == @current_user.id
+            %li
+              = link_to(recommendation.song.title, "https://open.spotify.com/track/" + recommendation.song.external_id.to_s)
+              %br
+              %b To
+              #{recommendation.to_user.full_name}
+              %br
+              
+              - unless recommendation.comments.nil?
+                %b Comment
+                #{recommendation.comments}
+
+              - if recommendation.to == @current_user.id
+                %form{ action: "/recommendations/comment", method: "post" }
+                  %input{type: "hidden", name:"id", value: recommendation.id}
+                  %input{name: "authenticity_token", value: "#{form_authenticity_token}", type: "hidden"}
+                  %input{type: "text", name: "comments", value:""}
+                  %input{type: "submit", value:"Comment"}
+              
+              .right
+                - if recommendation.liked?
+                  %span{:style => "color:green"} Liked!
+                - elsif recommendation.liked == false
+                  %span{:style => "color:red"} Disliked!
+            %hr

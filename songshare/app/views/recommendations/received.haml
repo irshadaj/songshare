@@ -3,8 +3,8 @@
   %br
   %td
     = link_to image_tag('/home.png', :height => 30, :width => 100), root_path
-%br
 .row
-  .col-md-8.col-sm-6
+  .col-md-4.col-sm-6
     .container-fluid
-      = render partial: '/_list'
+      = render partial: 'recommendations/received'
+= link_to('View sent recommendations', '/sent')

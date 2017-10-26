@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   resources :recommendations, only: [:create, :index]
 
   get 'top_tracks' => 'top_tracks#show'
-  get 'reviews' => 'reviews#show'
-  
-  post 'reviews' => 'reviews#create'
+  get '/sent' => 'recommendations#sent'
+  get 'recommendations/received' => 'recommendations#received'
 
   post 'recommendations/like' => 'recommendations#like'
   post 'recommendations/dislike' => 'recommendations#dislike'

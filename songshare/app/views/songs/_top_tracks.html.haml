@@ -1,7 +1,7 @@
 .panel.panel-info.top-tracks
   .panel-heading
     %h3 Top Tracks
-  .panel-body
+  .panel-body{:style => "background-color: lemonchiffon"}
     - if @top_tracks.blank?
       %p You do not have any top tracks yet.
     - else
