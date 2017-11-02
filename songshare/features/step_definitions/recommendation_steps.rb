@@ -1,7 +1,7 @@
 # Sending recommendations
 
-Given(/^I am on the recommendations page$/) do
-  visit '/recommendations'
+Given(/^I am on the received recommendations page$/) do
+  visit '/recommendations/received'
 end
 
 Given(/^I am on the song page$/) do
@@ -10,8 +10,6 @@ end
 
 When(/^I recommend the song to a friend$/) do
   RSpec::Mocks.with_temporary_scope do
-    fill_in 'to', with: 'friend1'
-
     stub_rec = {'from' => 1, 'to' => 2, 'song_id' => 6, 'liked' => nil, 'created_at' => DateTime.now, 'updated_at' => DateTime.now}
     Recommendation.stub(:get_by_receiver).with(2).and_return(stub_rec)
     Recommendation.stub(:get_by_sender).with(1).and_return(stub_rec)

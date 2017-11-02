@@ -5,6 +5,10 @@ Given(/^I am signed in$/) do
   @user = User.find_by_uid(@auth[:uid])
 end
 
+Given(/^I am not signed in$/) do
+  Site.home.load
+end
+
 When(/^I sign in with my Spotify account$/) do
   @auth = OmniAuth.config.mock_auth[:spotify]
   Site.home.navbar.sign_in.click

@@ -1,0 +1,23 @@
+.panel.panel-info.top-tracks
+  .panel-heading
+    %h3 Recent Recommendations
+  .panel-body{:style => "background-color: lemonchiffon"}
+    - if @recommendations.blank?
+      %p No recommendations generated
+    - else
+      %ol
+        - @recommendations.each do |recommendation|  
+          %li
+          = link_to(recommendation.song.title, "https://open.spotify.com/track/" + recommendation.song.external_id.to_s)
+          %br
+          %b From
+          #{recommendation.from_user.full_name}
+          %br
+          %b To
+          #{recommendation.to_user.full_name}
+          %br  
+        
+          - unless recommendation.comments.nil?
+            %b Comment
+            #{recommendation.comments}
+        %hr

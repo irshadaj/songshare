@@ -23,6 +23,10 @@ end
     @recommendations = Recommendation.where('"to" = ?', current_user.id)
   end
 
+  def all
+    @recommendations = Recommendation.all
+  end
+
   def like
     recommendation = Recommendation.find_by(id: params[:id])
     recommendation.update(liked: true)

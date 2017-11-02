@@ -5,6 +5,10 @@ def search_song(name)
   form.search_button.click
 end
 
+When("I visit the top tracks page") do
+  visit '/top_tracks'
+end
+
 When(/^I search for a song$/) do
   search_song('The Greatest Show On Earth')
 end

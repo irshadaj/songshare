@@ -7,7 +7,7 @@ Feature: Remove friend
   Background:
     Given I am signed in
     And I have friends
-    And I am on the home page
+    And I am on the friends page
 
   Scenario: Removing friend
     When I unfriend a friend

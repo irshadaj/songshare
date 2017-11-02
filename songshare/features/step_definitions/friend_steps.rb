@@ -13,6 +13,10 @@ Given(/^I have friends$/) do
   end
 end
 
+Given("I am on the friends page") do
+  visit '/friends'
+end
+
 Given(/^I have an incoming friend request$/) do
   @incoming = create(:user)
   create(:friendship, user: @incoming, friend: @user)
@@ -39,6 +43,10 @@ Given(/^the friend request has been rejected$/) do
   Friendship.find_by(user: @incoming, friend: @user).delete
 end
 
+When("I visit the friends page") do
+  visit '/friends'
+end
+
 When(/^I add a friend$/) do
   @outgoing = create(:user)
   add_friend(@outgoing.uid)
@@ -62,7 +70,7 @@ When(/^I (accept|reject) their friend request$/) do |link_type|
 end
 
 Then(/^I see my friends list$/) do
-  expect(Site.home).to have_friends_list
+  expect(page).to have_friends_list
 end
 
 Then(/^I do not see the friends list$/) do

@@ -6,9 +6,5 @@ Feature: Top tracks list
 
   Scenario: Listing top tracks
     Given I am signed in
-    When I visit the home page
+    When I visit the top tracks page
     Then I see a list of my top tracks
-
-  Scenario: No top tracks listed when not signed in
-    When I visit the home page
-    Then I do not see a list of my top tracks

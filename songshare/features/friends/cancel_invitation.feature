@@ -7,7 +7,7 @@ Feature: Cancel friend invitation
   Background:
     Given I am signed in
     And I have an outgoing friend request
-    And I am on the home page
+    And I am on the friends page
 
   Scenario: Cancel invitation
     When I cancel my friend invitation

@@ -15,8 +15,11 @@
               #{recommendation.from_user.full_name}
               
               - unless recommendation.comments.nil?
-                %b Comment
+                %br
+                %b Comments
+                %br
                 #{recommendation.comments}
+                %br
 
               - if recommendation.to == @current_user.id
                 %form{ action: "/recommendations/comment", method: "post" }

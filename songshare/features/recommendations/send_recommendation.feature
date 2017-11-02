@@ -12,8 +12,3 @@ Feature: Recommend a song
     When I recommend the song to a friend
     Then the song should be added to friend's received recommendations
     And the song should be added to my sent recommendations
-
-#  Scenario: Recommending a song without User ID
-#    When the user field is empty
-#    And I click on the recommend button
-#    Then it should ask me to enter a user ID

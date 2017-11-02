@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'top_tracks' => 'top_tracks#show'
   get '/sent' => 'recommendations#sent'
   get 'recommendations/received' => 'recommendations#received'
+  get '/all' => 'recommendations#all'
 
   post 'recommendations/like' => 'recommendations#like'
   post 'recommendations/dislike' => 'recommendations#dislike'

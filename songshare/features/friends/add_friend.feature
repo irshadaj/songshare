@@ -6,7 +6,7 @@ Feature: Add a friend
 
   Background:
     Given I am signed in
-    And I am on the home page
+    And I am on the friends page
 
   Scenario: Add friend in the system
     When I add a friend

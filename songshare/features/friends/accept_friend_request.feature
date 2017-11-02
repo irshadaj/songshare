@@ -7,7 +7,7 @@ Feature: Accept friend request
   Background:
     Given I am signed in
     And I have an incoming friend request
-    And I am on the home page
+    And I am on the friends page
 
   Scenario: Accept request
     When I accept their friend request

@@ -7,7 +7,7 @@ Feature: Reject friend request
   Background:
     Given I am signed in
     And I have an incoming friend request
-    And I am on the home page
+    And I am on the friends page
 
   Scenario: Reject request
     When I reject their friend request
