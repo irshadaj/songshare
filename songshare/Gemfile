@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'selenium-webdriver'
+gem 'cucumber'
+gem 'capybara'
+gem 'capybara-screenshot'
+gem 'chromedriver-helper'
+
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1' # Rails framework
 gem 'pg', '~> 0.18' # PostgreSQL library
 gem 'puma', '~> 3.0' # Web server
@@ -46,4 +52,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Provides time zone info for Windows platform
-

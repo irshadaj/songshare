@@ -1,5 +1,5 @@
 def visit_home
-  Site.home.load
+  visit '/'
 end
 
 Given(/^I am on the home page$/) do

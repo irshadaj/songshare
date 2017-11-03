@@ -39,3 +39,16 @@ Around do |_scenario, block|
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+require 'capybara'
+require 'cucumber'
+require 'selenium-webdriver'
+
+Capybara.default_driver = :selenium
+Capybara.app_host = "http://localhost:3000"
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new app, browser: :chrome
+end
+
+
+Capybara.save_and_open_page_path = "features/screenshots/"

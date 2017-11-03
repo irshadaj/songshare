@@ -15,8 +15,7 @@
               %img.img-responsive{:src => "/logout.jpg", :height => 100, :width => 100}
           - else
             = link_to(user_spotify_omniauth_authorize_path, class: :sign_in) do
-              %img.img-responsive{:src => "/login.jpg", :height => 100, :width => 100}
+              %img.img-responsive{type: :button, :src => "/login.jpg", :height => 100, :width => 100}
       - if user_signed_in?
         %center
           = render partial: 'shared/search_navbar'
-
