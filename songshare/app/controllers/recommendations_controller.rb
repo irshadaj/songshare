@@ -3,7 +3,7 @@ class RecommendationsController < ApplicationController
   @recommendation = Recommendation.new(recommendation_params.merge(from: current_user.id))
   @song = Song.find(recommendation_params[:song_id])
   if @recommendation.save
-    redirect_to recommendations_path
+    redirect_to '/all'
   else
     logger.error(@recommendation.errors.inspect)
     flash.now[:alert] = "Could not recommend song"
