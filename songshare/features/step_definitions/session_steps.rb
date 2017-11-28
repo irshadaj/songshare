@@ -7,10 +7,15 @@ def sign_in
   visit '/users/auth/spotify'
   sleep(2)
   click_link_or_button 'Log in to Spotify'
+  sleep(2)
   click_link_or_button 'Log in with Facebook'
+  sleep(2)
   fill_in 'Email or Phone Number', :with => 'irshad.aj@gmail.com'
+  sleep(2)
   fill_in 'Password', :with => 'REAL PASSWORD HERE'
+  sleep(2)
   click_button 'Log In'
+  sleep(2)
 end
 
 Given(/^I am signed in$/) do
@@ -27,12 +32,19 @@ end
 
 When(/^I fail to sign in to Spotify$/) do
   visit '/sign_out'
+  sleep(2)
   visit '/users/auth/spotify'
+  sleep(2)
   click_link_or_button 'Log in to Spotify'
+  sleep(2)
   click_link_or_button 'Log in with Facebook'
+  sleep(2)
   fill_in 'Email or Phone Number', :with => 'irshad.aj@gmail.com'
+  sleep(2)
   fill_in 'Password', :with => 'wrongpassword'
+  sleep(2)
   click_button 'Log In'
+  sleep(2)
 end
 
 When(/^I sign out$/) do
