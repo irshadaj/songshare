@@ -60,7 +60,7 @@ Then(/^I see I used invalid credentials$/) do
 end
 
 Then(/^I do not see the Sign Out link$/) do
-  expect(Site.home.navbar).not_to have_sign_out
+  expect(page).not_to have_text('Welcome')
 end
 
 Then(/^I see I have signed out$/) do
