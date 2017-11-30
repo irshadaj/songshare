@@ -30,19 +30,19 @@ end
   def like
     recommendation = Recommendation.find_by(id: params[:id])
     recommendation.update(liked: true)
-    redirect_to '/recommendations'
+    redirect_to '/recommendations/received'
   end
 
   def dislike
     recommendation = Recommendation.find_by(id: params[:id])
     recommendation.update(liked: false)
-    redirect_to '/recommendations'
+    redirect_to '/recommendations/received'
   end
 
   def comment
     recommendation = Recommendation.find_by(id: params[:id])
     recommendation.update(comments: params[:comments])
-    redirect_to '/recommendations'
+    redirect_to '/recommendations/received'
   end
 
   private
